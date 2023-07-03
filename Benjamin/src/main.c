@@ -9,7 +9,7 @@ void print_help()
 	printf("                  Hello! 👋 \n");
 	printf("Welcome to the ben.jamin programing language 😎 \n \n");
 
-	printf("So far we got a lexer and a parser. The lexer takes the input and turns \nit into a token that I can understand. The parser builds a AST \n(Abstract Semantic Tree) and parses the nodes of the tree into tokens using the lexer.\nTo load a file type 'ben <filename>\n\nThere is now a built-in: print function\n(Im still working on stuff, so not much is functional, but hey... ntbimho😎)\n\n");
+	printf("So far we got a lexer and a parser. The lexer takes the input and turns \nit into a token that I can understand. The parser builds a AST \n(Abstract Semantic Tree) and parses the nodes of the tree into tokens using the lexer.\nTo load a file type './ben.jamin <filename>\n\nThere is now a built-in: print function\n(Im still working on stuff, so not much is functional, but hey... ntbimho😎)\n\n");
 	exit(1);
 }
 
