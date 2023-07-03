@@ -2,26 +2,28 @@
 #include "include/lexer.h"
 #include "include/parser.h"
 #include "include/visitor.h"
+#include "include/io.h"
+
+void print_help()
+{
+	printf("                  Hello! 👋 \n");
+	printf("Welcome to the ben.jamin programing language 😎 \n \n");
+
+	printf("So far we got a lexer and a parser. The lexer takes the input and turns \nit into a token that I can understand. The parser builds a AST \n(Abstract Semantic Tree) and parses the nodes of the tree into tokens using the lexer.\nTo load a file type 'ben <filename>\n\nThere is now a built-in: print function\n(Im still working on stuff, so not much is functional, but hey... ntbimho😎)\n\n");
+	exit(1);
+}
 
 int main(int argc, char* argv[])
 {
-//	printf("                  Hello! 👋 \n");
-//	printf("Welcome to the ben.jamin programing language 😎 \n \n");
-
-//	printf("So far we got a lexer and a parser. The lexer takes the input and turns \nit into a token that I can understand. The parser builds a AST \n(Abstract Semantic Tree) and parses the nodes of the tree into tokens using the lexer.\nThere is now a built-in: print function!\n(Im still working on stuff, so not much is functional, but hey... ntbimho)\n\n");
 	
-
-	printf("Current example input: \n var name = \"john doe 123\";\n var symbols = \"!@#$^&*()`~-_=+{[}]|:;'?/>.<, 👉👈👇👆🤜🤛 \"; \n print(name,symbols);\n \n");
+	if (argc <2)
+		print_help();
 	
 	// code to be ran
 	lexer_T* lexer = init_lexer(
-		"var name = \"john doe 123\";\n"
-		"var symbols = \"!@#$^&*()`~-_=+{[}]|:;'?/>.<, 👉👈👇👆🤜🤛 \"; \n"
-		"print(name, symbols)\n"
+		get_file_contents(argv[1])
 	);
 		
-		
-	printf("Parser output:\n");
 	// parser visiting AST
 	parser_T* parser = init_parser(lexer);
 	AST_T* root = parser_parse(parser);
