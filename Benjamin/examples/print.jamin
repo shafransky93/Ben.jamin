@@ -1,4 +1,0 @@
-var name = "john doe 123";
-var symbols = "!@#$^&*()`~-_=+{[}]|:;'?/>.<, 👉👈👇👆🤜🤛 ";
-print(name, symbols)
-
