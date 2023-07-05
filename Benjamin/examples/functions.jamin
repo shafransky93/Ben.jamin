@@ -1,5 +1,10 @@
-function dosomething()
+funk funky(x)
 {
-print("test");
-}
-dosomething();
+var y = "Say";
+print(y);
+print("Heyyyyyy");
+};
+
+funky();funky();
+funky();funky();
+
